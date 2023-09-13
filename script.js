@@ -21,6 +21,11 @@ function chooseSize () {
         container.appendChild(rowElement);
         rowElement.classList.add('rows')
     };
+
+    function randomColors () {
+        const randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+        return randomColor;
+    }
     
     box.forEach(printrow);
     
@@ -38,7 +43,7 @@ function chooseSize () {
     const grid = container.querySelectorAll('.grid');
     
     function paintSquare (square) {
-    square.addEventListener('mouseover', ()=>square.style.backgroundColor = 'blue')
+        square.addEventListener('mouseover', ()=>square.style.backgroundColor = randomColors())
     };
     
     grid.forEach(paintSquare)
@@ -59,6 +64,27 @@ function printrow (rowElement) {
     rowElement.classList.add('rows')
 };
 
+function randomColors () {
+    const randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+    return randomColor;
+}
+
+/*let darkness;
+const darkenedColor = "hsl(0, 0%, " + toString(darkness) + "%)"
+
+function darken () {
+    darkness += 10
+    
+    return darkenedColor;
+};
+
+function selectColor (){
+    if(colorMode == 'rainbow'){
+        randomColors();
+    }
+}
+*/
+
 box.forEach(printrow);
 
 const rows = container.querySelectorAll('.rows');
@@ -73,8 +99,18 @@ for(let row of rows){
 
 const grid = container.querySelectorAll('.grid');
 
+/*
+const rainbowSelector = document.querySelector('.rainbowSelector');
+const darkenSelector = document.querySelector('.darkenSelector');
+
+let colorMode;
+
+rainbowSelector.addEventListener('click', () => colorMode = 'rainbow');
+darkenSelector.addEventListener('click', () => colorMode = 'darken');
+*/
+
 function paintSquare (square) {
-square.addEventListener('mouseover', ()=>square.style.backgroundColor = 'blue')
+square.addEventListener('mouseover', ()=> square.style.backgroundColor = randomColors())
 };
 
 grid.forEach(paintSquare)
