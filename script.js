@@ -3,8 +3,6 @@ let gridSize = Number(prompt("Choose your grid size", "16"));
 const gridSelector = document.querySelector('.gridSelector');
 gridSelector.addEventListener('click',chooseSize)
 
-
-
 function chooseSize () {
     let gridSize = Number(prompt("Choose your grid size", "16"));
     if(gridSize > 100){
@@ -12,6 +10,8 @@ function chooseSize () {
     };
     
     container.innerHTML = "";
+    let box = [];
+    let column = [];
 
     for (let i = 0; i < gridSize; i++) {
         box[i] = document.createElement('div');
